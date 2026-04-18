@@ -3,10 +3,8 @@
 #include "cart.h"
 #include "store.h"
 
-using std::string;
-
 struct menu { //all user input and menu functionality here & in menu.cpp
-	string welcome_msg = "Welcome to the store!";
+	std::string welcome_msg = "Welcome to the store!";
 	int user_choice = 0;
 	cart cart;
 	store store;
@@ -25,7 +23,8 @@ struct menu { //all user input and menu functionality here & in menu.cpp
 
 
 	void welcome() const;
-	int get_user_choice() const; //use getline to get the users input, will return their choice (an int)
+	int get_user_choice(std::string prompt) const; //use getline to get the users input, will return their choice (an int)
+	bool get_confirmation() const; //prompt user to enter Y or N to confirm their action
 
 	//Menu options; call the associated item, cart, or store function here.
 	void start(); //start the menu loop
