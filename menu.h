@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include "cart.h"
 #include "store.h"
 
@@ -16,8 +15,7 @@ struct menu {
 		INVALID_INPUT = -1
 	};
 	
-
-
+	//Methods
 	void welcome() const;
 	int get_user_choice(std::string prompt) const;
 	bool get_confirmation() const; //prompts user to enter Y or N to confirm their action

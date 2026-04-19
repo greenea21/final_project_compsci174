@@ -31,7 +31,7 @@ bool cart::is_empty() const {
 }
 
 void cart::print_items() const {
-	std::cout << "[Cart Items]" << std::endl;
+	std::cout << "\n[Cart Items]" << std::endl;
 
 	if (is_empty()) {
 		std::cout << "Empty!" << std::endl;

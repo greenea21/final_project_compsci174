@@ -1,7 +1,6 @@
 #include <iostream>
-#include <string>
+//#include <string>
 #include "menu.h"
-#include "item.h"
 
 using std::cout; using std::endl;
 
