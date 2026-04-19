@@ -3,9 +3,7 @@
 #include "cart.h"
 #include "store.h"
 
-struct menu { //all user input and menu functionality here & in menu.cpp
-	std::string welcome_msg = "Welcome to the store!";
-	int user_choice = 0;
+struct menu {
 	cart cart;
 	store store;
 	enum user_options {
@@ -20,20 +18,15 @@ struct menu { //all user input and menu functionality here & in menu.cpp
 	
 
 
-
-
-
-
 	void welcome() const;
-	int get_user_choice(std::string prompt) const; //use getline to get the users input, will return their choice (an int)
-	bool get_confirmation() const; //prompt user to enter Y or N to confirm their action
+	int get_user_choice(std::string prompt) const;
+	bool get_confirmation() const; //prompts user to enter Y or N to confirm their action
 
-	//Menu options; call the associated item, cart, or store function here.
-	void start(); //start the menu/program loop
-	void quit() const; //MVP 3
+	//Menu options
+	void start(); //start the program loop
+	void quit() const;
 	void print_store_items() const;
 	void print_cart_items() const;
 	void add_item();
 	void checkout() const;
-	//add the rest
 };

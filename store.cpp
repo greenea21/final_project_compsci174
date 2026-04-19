@@ -2,11 +2,11 @@
 #include "store.h"
 #include "item.h"
 
-void store::initialize_items() { //a constructor within the item class would make this a lot cleaner
+void store::initialize_items() {
 	item apple;
 	apple.name = "Apple";
 	apple.price = 0.49;
-	apple.stock = 15; //Replace hardcoding items with reading from a text file
+	apple.stock = 15; 
 
 	item orange;
 	orange.name = "Orange";
@@ -37,7 +37,7 @@ bool store::can_purchase(int index) const {
 	return false;
 }
 
-int store::find_index(std::string key) const {
+int store::find_item_index(std::string key) const {
 	for (int i = 0; i < store_inventory.size(); i++) {
 		if (store_inventory[i].name == key) {
 			return i;

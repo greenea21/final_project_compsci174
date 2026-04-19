@@ -7,7 +7,7 @@ using std::vector;
 struct cart {
 	vector<item> cart_inventory; //starts empty
 
-	void add_item(item item); //check if store quanitity exists, remove n items from store, add n items to cart_inventory.
+	void add_item(item item);
 	void remove_item(item item);
 	void sort(); //(Stretch goal 3)
 	bool can_checkout() const; //if cart empty cannot checkout

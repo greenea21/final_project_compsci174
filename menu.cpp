@@ -6,7 +6,7 @@
 using std::cout; using std::endl;
 
 void menu::welcome() const {
-	cout << welcome_msg << endl;
+	cout << "Welcome to the store!" << endl;
 }
 
 int menu::get_user_choice(std::string prompt) const {
@@ -103,26 +103,23 @@ void menu::add_item() {
 	cout << "\nYou selected: Add item" << endl;
 	cout << "Which item would you like to purchase? (Type the item name)" << endl;
 
-	while (true) {
-		print_store_items();
+	print_store_items();
 
-		std::string name;
-		getline(std::cin, name);
+	std::string name;
+	getline(std::cin, name);
 
-		int index = store.find_index(name);
+	int index = store.find_item_index(name); //find the index with matching item <name>
 
-		if (!store.can_purchase(index)) {
-			std::cout << "Invalid item/out of stock!" << endl;
-			return;
-		}
-
-		cart.add_item(store.store_inventory[index]);
-		store.store_inventory[index].stock--;
-
-		std::cout << "\nCart Updated!" << std::endl;
-		print_cart_items();
-		break;
+	if (!store.can_purchase(index)) {
+		std::cout << "Invalid item/out of stock!" << endl;
+		return;
 	}
+
+	cart.add_item(store.store_inventory[index]);
+	store.store_inventory[index].stock--;
+
+	std::cout << "\nCart Updated!" << std::endl;
+	print_cart_items();
 }
 
 void menu::checkout() const {
