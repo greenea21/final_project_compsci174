@@ -32,5 +32,8 @@ struct menu { //all user input and menu functionality here & in menu.cpp
 	void start(); //start the menu/program loop
 	void quit() const; //MVP 3
 	void print_store_items() const;
+	void print_cart_items() const;
+	void add_item();
+	void checkout() const;
 	//add the rest
 };

@@ -5,12 +5,14 @@
 using std::vector;
 
 struct cart {
-	vector<item> cart_inventory;//use the 'vector' class here to create an array that can dynamically grow/shrink (Stretch goal 1)
+	vector<item> cart_inventory; //starts empty
 
-	vector<item> get(); //return the cart array (MVP 2.2 -- View the items in their cart)
 	void add_item(item item); //check if store quanitity exists, remove n items from store, add n items to cart_inventory.
 	void remove_item(item item);
 	void sort(); //(Stretch goal 3)
+	bool can_checkout() const; //if cart empty cannot checkout
 	void checkout() const; //MVP 2.4 (print a receipt of all items purchased and the total cost to the user)
-	void view() const; //print the users current cart
+	bool is_empty() const;
+	void print_items() const; //print the users current cart
+	double get_total() const;
 };

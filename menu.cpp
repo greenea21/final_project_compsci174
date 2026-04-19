@@ -54,21 +54,21 @@ void menu::start() {
 
 		switch (choice) {
 		case ADD_ITEM:
-			cout << "\nYou selected: Add item" << endl;
+			add_item();
 			break;
 		case REMOVE_ITEM:
 			cout << "\nYou selected: Remove item" << endl;
 			break;
 		case VIEW_CART:
-			cout << "\nYou selected: View cart" << endl;
+			print_cart_items();
 			break;
 		case VIEW_STORE_ITEMS:
 			cout << "\nYou selected: Show store items" << endl;
 			print_store_items();
 			break;
 		case CHECK_OUT:
-			cout << "\nYou selected: Checkout" << endl;
-			break;
+			checkout();
+			return;
 		case EXIT:
 			quit();
 			break;
@@ -93,4 +93,44 @@ void menu::quit() const {
 
 void menu::print_store_items() const {
 	store.print_items();
+}
+
+void menu::print_cart_items() const {
+	cart.print_items();
+}
+
+void menu::add_item() {
+	cout << "\nYou selected: Add item" << endl;
+	cout << "Which item would you like to purchase? (Type the item name)" << endl;
+
+	while (true) {
+		print_store_items();
+
+		std::string name;
+		getline(std::cin, name);
+
+		int index = store.find_index(name);
+
+		if (!store.can_purchase(index)) {
+			std::cout << "Invalid item/out of stock!" << endl;
+			return;
+		}
+
+		cart.add_item(store.store_inventory[index]);
+		store.store_inventory[index].stock--;
+
+		std::cout << "\nCart Updated!" << std::endl;
+		print_cart_items();
+		break;
+	}
+}
+
+void menu::checkout() const {
+	if (cart.can_checkout()) {
+		cout << "\nYou selected: Checkout" << endl;
+		cart.checkout();
+	}
+	else {
+		std::cout << "Cart is empty!" << std::endl;
+	}
 }

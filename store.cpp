@@ -26,3 +26,23 @@ void store::print_items() const {
 		<< store_inventory[i].stock << " left" << std::endl;
 	}
 }
+
+bool store::can_purchase(int index) const {
+	if (index >= 0 && index < store_inventory.size()) { //check valid index
+		if (store_inventory[index].stock > 0) { //check quantity
+			return true;
+		}
+	}
+
+	return false;
+}
+
+int store::find_index(std::string key) const {
+	for (int i = 0; i < store_inventory.size(); i++) {
+		if (store_inventory[i].name == key) {
+			return i;
+		}
+	}
+
+	return -1;
+}
