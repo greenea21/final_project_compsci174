@@ -8,12 +8,14 @@ struct menu { //all user input and menu functionality here & in menu.cpp
 	int user_choice = 0;
 	cart cart;
 	store store;
-	enum options {
-		ADD_ITEM = 1,
-		VIEW_CART = 2,
-		VIEW_STORE_ITEMS = 3,
-		CHECK_OUT = 4,
-		EXIT = 5
+	enum user_options {
+		ADD_ITEM,
+		REMOVE_ITEM,
+		VIEW_CART,
+		VIEW_STORE_ITEMS,
+		CHECK_OUT,
+		EXIT,
+		INVALID_INPUT = -1
 	};
 	
 
@@ -27,7 +29,7 @@ struct menu { //all user input and menu functionality here & in menu.cpp
 	bool get_confirmation() const; //prompt user to enter Y or N to confirm their action
 
 	//Menu options; call the associated item, cart, or store function here.
-	void start(); //start the menu loop
+	void start(); //start the menu/program loop
 	void quit() const; //MVP 3
 	void print_store_items() const;
 	//add the rest
