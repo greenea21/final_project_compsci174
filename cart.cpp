@@ -5,9 +5,21 @@ void cart::add_item(item item) {
 	cart_inventory.push_back(item);
 }
 
-void cart::remove_item(item item) {
-	//will need to find the matching item in the array
-	//if found, remove N items
+void cart::remove_item() {
+	std::string item;
+	int item_ID;
+	print_items();
+	std::cout << "What item would you like to remove?" << std::endl;
+	std::getline(std::cin, item);
+	try {
+		item_ID = std::stoi(item);
+	}
+	catch (const std::exception& e) {
+		std::cout << "Must enter the items corresponding integer.";
+		return;
+	}
+	cart_inventory.erase(cart_inventory.begin() + item_ID);
+	return;
 }
 
 bool cart::can_checkout() const {
