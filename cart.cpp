@@ -39,8 +39,7 @@ void cart::print_items() const {
 	}
 
 	for (int i = 0; i < cart_inventory.size(); i++) {
-		std::cout << cart_inventory[i].name << "\t$"
-			<< cart_inventory[i].price << std::endl;
+	std::cout << i << ". " << cart_inventory[i].name << "\t$" << cart_inventory[i].price << std::endl;
 	}
 }
 
