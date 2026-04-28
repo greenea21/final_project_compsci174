@@ -22,8 +22,8 @@ void store::print_items() const {
 
 	for (int i = 0; i < store_inventory.size(); i++) {
 		std::cout << store_inventory[i].name << "\t$"
-		<< store_inventory[i].price << "\t"
-		<< store_inventory[i].stock << " left" << std::endl;
+			<< store_inventory[i].price << "\t"
+			<< store_inventory[i].stock << " left" << std::endl;
 	}
 }
 
