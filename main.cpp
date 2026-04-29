@@ -7,8 +7,6 @@
 //add 6 more items in store.cpp
 //2 or more stretch goals, preferably at least 4 total in case one is wrong
 	//stretch goals 2, 3, 6, and 7 look the easiest
-//currently if the cart is empty and they checkout, the program ends.
-	//it should continue
 
 //------------------------------------------------------------------------//
 

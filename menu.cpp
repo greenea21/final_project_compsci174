@@ -122,7 +122,7 @@ void menu::add_item() {
 }
 
 void menu::checkout() const {
-	if (cart.can_checkout()) {
+	if (cart.can_checkout() && get_confirmation()) {
 		cout << "\nYou selected: Checkout" << endl;
 		cart.checkout();
 	}

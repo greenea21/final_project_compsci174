@@ -34,8 +34,6 @@ void cart::remove_item() {
 		std::cout << "Must enter the item's corresponding integer.";
 		return;
 	}
-
-	//return;
 }
 
 bool cart::can_checkout() const {
