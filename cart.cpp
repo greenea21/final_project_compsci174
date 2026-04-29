@@ -6,20 +6,36 @@ void cart::add_item(item item) {
 }
 
 void cart::remove_item() {
-	std::string item;
-	int item_ID;
-	print_items();
-	std::cout << "What item would you like to remove?" << std::endl;
-	std::getline(std::cin, item);
-	try {
-		item_ID = std::stoi(item);
-	}
-	catch (const std::exception& e) {
-		std::cout << "Must enter the items corresponding integer.";
+	if (is_empty()) {
+		std::cout << "Your cart is empty!" << std::endl;
 		return;
 	}
-	cart_inventory.erase(cart_inventory.begin() + item_ID);
-	return;
+
+	std::string temp;
+	int index;
+	print_items();
+
+	std::cout << "What item would you like to remove?" << std::endl;
+	std::getline(std::cin, temp);
+
+	//Check input is valid integer
+	try {
+		index = std::stoi(temp);
+	}
+	catch (const std::exception& e) {
+		
+	}
+	
+	//Check input makes sense (valid vector element)
+	if (!(index < 0 || index >= cart_inventory.size())) {
+		cart_inventory.erase(cart_inventory.begin() + index);
+	}
+	else {
+		std::cout << "Must enter the item's corresponding integer.";
+		return;
+	}
+
+	//return;
 }
 
 bool cart::can_checkout() const {
