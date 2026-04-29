@@ -37,7 +37,7 @@ bool store::can_purchase(int index) const {
 	return false;
 }
 
-int store::find_item_index(std::string key) const {
+int store::find_item_index(const std::string& key) const {
 	for (int i = 0; i < store_inventory.size(); i++) {
 		if (store_inventory[i].name == key) {
 			return i;

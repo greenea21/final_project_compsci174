@@ -8,7 +8,7 @@ void menu::welcome() const {
 	cout << "Welcome to the store!" << endl;
 }
 
-int menu::get_user_choice(std::string prompt) const {
+int menu::get_user_choice(const std::string& prompt) const {
 	cout << prompt << endl;
 
 	std::string temp;

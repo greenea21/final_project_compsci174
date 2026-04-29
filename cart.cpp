@@ -1,7 +1,7 @@
 #include <iostream>
 #include "cart.h"
 
-void cart::add_item(item item) {
+void cart::add_item(const item& item) {
 	cart_inventory.push_back(item);
 }
 

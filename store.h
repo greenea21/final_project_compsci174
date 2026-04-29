@@ -10,5 +10,5 @@ struct store {
 	void initialize_items();
 	void print_items() const;
 	bool can_purchase(int index) const;
-	int find_item_index(std::string key) const;
+	int find_item_index(const std::string& key) const;
 };

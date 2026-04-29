@@ -17,7 +17,7 @@ struct menu {
 	
 	//Methods
 	void welcome() const;
-	int get_user_choice(std::string prompt) const;
+	int get_user_choice(const std::string& prompt) const;
 	bool get_confirmation() const; //prompts user to enter Y or N to confirm their action
 
 	//Menu options
