@@ -122,7 +122,12 @@ void menu::add_item() {
 }
 
 void menu::checkout() const {
-	if (cart.can_checkout() && get_confirmation()) {
+	if (!get_confirmation()) {
+		std::cout << "Checkout cancelled!" << std::endl;
+		return;
+	}
+
+	if (cart.can_checkout()) {
 		cout << "\nYou selected: Checkout" << endl;
 		cart.checkout();
 	}

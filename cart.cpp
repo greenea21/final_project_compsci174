@@ -23,7 +23,8 @@ void cart::remove_item() {
 		index = std::stoi(temp);
 	}
 	catch (const std::exception& e) {
-		
+		std::cout << "Must enter a valid item index!" << std::endl;
+		return;
 	}
 	
 	//Check input makes sense (valid vector element)
@@ -31,7 +32,7 @@ void cart::remove_item() {
 		cart_inventory.erase(cart_inventory.begin() + index);
 	}
 	else {
-		std::cout << "Must enter the item's corresponding integer.";
+		std::cout << "Must enter the item's corresponding integer." << std::endl;
 		return;
 	}
 }
