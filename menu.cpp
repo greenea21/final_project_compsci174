@@ -56,7 +56,7 @@ void menu::start() {
 			add_item();
 			break;
 		case REMOVE_ITEM:
-			cout << "\nYou selected: Remove item" << endl;
+			cart.remove_item();
 			break;
 		case VIEW_CART:
 			print_cart_items();
@@ -67,7 +67,7 @@ void menu::start() {
 			break;
 		case CHECK_OUT:
 			checkout();
-			return;
+			break;
 		case EXIT:
 			quit();
 			break;

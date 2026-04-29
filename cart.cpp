@@ -5,9 +5,37 @@ void cart::add_item(item item) {
 	cart_inventory.push_back(item);
 }
 
-void cart::remove_item(item item) {
-	//will need to find the matching item in the array
-	//if found, remove N items
+void cart::remove_item() {
+	if (is_empty()) {
+		std::cout << "Your cart is empty!" << std::endl;
+		return;
+	}
+
+	std::string temp;
+	int index;
+	print_items();
+
+	std::cout << "What item would you like to remove?" << std::endl;
+	std::getline(std::cin, temp);
+
+	//Check input is valid integer
+	try {
+		index = std::stoi(temp);
+	}
+	catch (const std::exception& e) {
+		
+	}
+	
+	//Check input makes sense (valid vector element)
+	if (!(index < 0 || index >= cart_inventory.size())) {
+		cart_inventory.erase(cart_inventory.begin() + index);
+	}
+	else {
+		std::cout << "Must enter the item's corresponding integer.";
+		return;
+	}
+
+	//return;
 }
 
 bool cart::can_checkout() const {
@@ -39,8 +67,7 @@ void cart::print_items() const {
 	}
 
 	for (int i = 0; i < cart_inventory.size(); i++) {
-		std::cout << cart_inventory[i].name << "\t$"
-			<< cart_inventory[i].price << std::endl;
+	std::cout << i << ". " << cart_inventory[i].name << "\t$" << cart_inventory[i].price << std::endl;
 	}
 }
 
