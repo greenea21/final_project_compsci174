@@ -1,0 +1,6 @@
+[Receipt]
+0. Apple	$0.49
+1. Apple	$0.49
+Subtotal: $0.98
+Tax: $0
+Total: $0.98
