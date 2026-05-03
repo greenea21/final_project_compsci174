@@ -9,7 +9,6 @@ struct cart {
 
 	void add_item(const item& item);
 	void remove_item();
-	void sort(); //(Stretch goal 3)
 	bool can_checkout() const; //if cart empty cannot checkout
 	void checkout() const; //MVP 2.4 (print a receipt of all items purchased and the total cost to the user)
 	bool is_empty() const;

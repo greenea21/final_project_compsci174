@@ -17,7 +17,7 @@ void cart::remove_item() {
 	int index;
 	print_items();
 
-	std::cout << "What item would you like to remove?" << std::endl;
+	std::cout << "What item would you like to remove? (Enter the item number)" << std::endl;
 	std::getline(std::cin, temp);
 
 	//Check input is valid integer
@@ -55,7 +55,6 @@ void cart::checkout() const {
 	std::string state;
 
 	std::cout << "Enter your state abbreviation (WI, IL, MN, MI, IA): ";
-	std::cin.ignore();
 	std::getline(std::cin, state);
 	if (state == "WI" || state == "wi" || state == "Wisconsin" || state == "wisconsin") {
 		tax_rate = 0.05;
@@ -81,9 +80,9 @@ void cart::checkout() const {
 	final_total = subtotal + tax_amount;
 
 	std::cout << "Subtotal: $" << subtotal << std::endl;
-	std::cout << "Tax: $" << tax_amount << std::endl;
-	std::cout << "Total: $" << final_total << std::endl;
-	// streach goal 7
+	std::cout << "Tax:      $" << tax_amount << std::endl;
+	std::cout << "Total:    $" << final_total << std::endl;
+	// stretch goal 7
 	std::ofstream receipt_file;
 	receipt_file.open("receipt.txt");
 
@@ -96,8 +95,8 @@ void cart::checkout() const {
 		}
 
 		receipt_file << "Subtotal: $" << subtotal << std::endl;
-		receipt_file << "Tax: $" << tax_amount << std::endl;
-		receipt_file << "Total: $" << final_total << std::endl;
+		receipt_file << "Tax:      $" << tax_amount << std::endl;
+		receipt_file << "Total:    $" << final_total << std::endl;
 
 		receipt_file.close();
 
@@ -109,11 +108,7 @@ void cart::checkout() const {
 }
 
 bool cart::is_empty() const {
-	if (cart_inventory.size() <= 0) {
-		return true;
-	}
-
-	return false;
+	return (cart_inventory.size() <= 0);
 }
 
 void cart::print_items() const {
@@ -125,7 +120,7 @@ void cart::print_items() const {
 	}
 
 	for (int i = 0; i < cart_inventory.size(); i++) {
-	std::cout << i << ". " << cart_inventory[i].name << "\t$" << cart_inventory[i].price << std::endl;
+		std::cout << i << ". " << cart_inventory[i].name << "\t$" << cart_inventory[i].price << std::endl;
 	}
 }
 

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "store.h"
 #include "item.h"
+
 // added 6 more items to store inventory
 void store::initialize_items() {
 	item apple;
@@ -80,5 +81,5 @@ int store::find_item_index(const std::string& key) const {
 		}
 	}
 
-	return -1;
+	return -1; //item not found
 }

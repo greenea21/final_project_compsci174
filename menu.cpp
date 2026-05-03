@@ -1,5 +1,4 @@
 #include <iostream>
-//#include <string>
 #include "menu.h"
 
 using std::cout; using std::endl;

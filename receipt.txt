@@ -1,6 +1,12 @@
 [Receipt]
 0. Apple	$0.49
-1. Chicken	$7.99
-Subtotal: $8.48
-Tax: $0
-Total: $8.48
+1. Orange	$0.79
+2. Banana	$0.39
+3. Bread	$2.49
+4. Milk	$3.29
+5. Eggs	$2.99
+6. Cheese	$4.49
+7. Chicken	$7.99
+Subtotal: $22.92
+Tax:      $1.4325
+Total:    $24.3525
