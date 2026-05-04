@@ -4,9 +4,9 @@
 //6: Sales tax
 //7: Receipt output to file
 //9: Switch statement instead of if-else chain
-//10: Safeguard against malicious input
+//10: Safeguard against malicious/bad input
 
-//------------------------------------------------------------------------//
+//---------------------------------------------//
 
 //program starts here with menu.start()
 //menu handles all user input and program flow
